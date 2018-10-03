@@ -9,7 +9,6 @@ client_sock = socket(AF_INET, SOCK_DGRAM)
 client_sock.settimeout(1)
 
 curr_seq = 0
-avg_ping = 0
 for i in range(NUM_PACKETS_TO_SEND):
 	time_ms = int(round(time.time() * 1000))
 	message = 'Ping {} {}'.format(curr_seq, time_ms)
@@ -18,7 +17,6 @@ for i in range(NUM_PACKETS_TO_SEND):
 	try:
 		data = client_sock.recv(1024)
 		time_taken = (time.time() - past) * 1000
-		avg_ping = avg_ping * (
 		
 		if time_taken < 1:
 			time_taken = '<1'
