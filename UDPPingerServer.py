@@ -19,6 +19,4 @@ while True:
 	if rand < 4:
 		continue
 	# Otherwise, the server responds
-        # modified - add random 20-70ms delay to sanity-check RTT calculations
-	sleep(random.randint(20, 70) / 1000.0)
 	serverSocket.sendto(message, address)
