@@ -15,9 +15,9 @@ while True:
 	messageB = connectionSocketB.recv(1024).decode()
 	print(messageB)
 	# Capitalize the message from the client
-	messageA += 'received before' + messageB
+	messageA += ' received before ' + messageB
 	# Otherwise, the server responds
-	connectionSocketA.sendto(messageA.encode())
+	connectionSocketA.send(messageA.encode())
 	connectionSocketA.close()
-	connectionSocketB.sendto(messageA.encode())
+	connectionSocketB.send(messageA.encode())
 	connectionSocketB.close()
