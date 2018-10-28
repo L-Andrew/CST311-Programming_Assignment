@@ -26,7 +26,6 @@ def listen(client_socket, name):
 		try:
 			message = client_socket.recv(MSG_BUFFER_SIZE)
 			print(message.decode().replace(name, name + " (You)"))
-			break
 		except:
 			print("[!] Connection closed.")
 			break
